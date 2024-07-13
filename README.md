@@ -2,7 +2,7 @@
 
 This project is for the rush01 assignment.
 
-# Compile and run
+## Compile and run
 ```bash
 git clone https://github.com/kuripa/rush01
 ```
@@ -16,7 +16,7 @@ make
 ./rush01
 ```
 
-# Debug
+## Debug
 This will compile the program with the optional debug flags (`-g -O0`)
 ```bash
 make debug
@@ -25,7 +25,7 @@ make debug
 gdb ./rush01
 ```
 
-# Clean
+## Clean
 This removes all object `.o` files.
 ```bash
 make clean
