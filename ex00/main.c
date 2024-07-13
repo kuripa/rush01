@@ -9,12 +9,21 @@
 /*   Updated: 2024/07/13 12:34:10 by nfuhrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-//#include "dbg.h"
+// #include "dbg.h"
 #include <unistd.h>
 
 /*TODO: remove this and create a dynamic array*/
 #define ROW 4
 #define COLUMN 4
+int is_valid(char board[i][j], int choice, int x, int y)
+{
+    
+    if(char)
+
+
+
+    return 0;
+}
 
 void solve(char *board[ROW][COLUMN]) { (void)board; }
 
@@ -49,13 +58,13 @@ void print_board(char board[ROW][COLUMN]) {
   }
 }
 
-void split_string(char *hints, char hints_arr[4][4]) {
+void split_string(char *hints, char hints_arr[ROW][COLUMN]) {
   int i = 0;
   int j = 0;
   if (hints) {
 
     while (i < ROW && *hints) {
-        j = 0;
+      j = 0;
       while (j < COLUMN) {
         if (*hints >= '0' && *hints <= '9') {
           hints_arr[i][j] = *hints;
