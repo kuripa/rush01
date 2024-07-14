@@ -10,36 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 // #include "dbg.h"
-#include <unistd.h>
+#include <stdio.h>
+#include "utils.h"
 
 /*TODO: remove this and create a dynamic array*/
 #define ROW 4
 #define COLUMN 4
-int is_valid(char board[i][j], int choice, int x, int y)
+
+int count_visible(int line[ROW])
 {
-    
-    if(char)
-
-
-
-    return 0;
+    int result = 0;
+    int max_height = 0;
+    int i = 0;
+    while(i < ROW)
+    {
+        if(line[i] > max_height)
+        {
+            max_height = line[i];
+            result++;
+        }
+        i++;
+    }
+    return result;
 }
+
+/*int is_valid( )*/
+/*{*/
+/**/
+/*    return 0;*/
+/*}*/
 
 void solve(char *board[ROW][COLUMN]) { (void)board; }
 
-void ft_putchar(char c) { write(1, &c, 1); }
-
-void ft_putnbr(int nbr) {
-  if (nbr < 0) {
-    ft_putchar('-');
-    ft_putnbr(-nbr);
-  } else if (nbr > 9) {
-    ft_putnbr(nbr / 10);
-    ft_putnbr(nbr % 10);
-  } else {
-    ft_putchar(nbr + '0');
-  }
-}
 
 void print_board(char board[ROW][COLUMN]) {
   int i = 0;
@@ -58,24 +60,6 @@ void print_board(char board[ROW][COLUMN]) {
   }
 }
 
-void split_string(char *hints, char hints_arr[ROW][COLUMN]) {
-  int i = 0;
-  int j = 0;
-  if (hints) {
-
-    while (i < ROW && *hints) {
-      j = 0;
-      while (j < COLUMN) {
-        if (*hints >= '0' && *hints <= '9') {
-          hints_arr[i][j] = *hints;
-          j++;
-        }
-        hints++;
-      }
-      i++;
-    }
-  }
-}
 
 int main(int argc, char *argv[]) {
   (void)argc;
@@ -100,6 +84,14 @@ int main(int argc, char *argv[]) {
   }
 
   split_string(hints, hints_arr);
+
+   int line[4];
+  for (int i = 0; i < 4; i++) {
+    line[i] = board[0][i]; 
+  }
+   printf("%d", count_visible(line));
+  
+
   print_board(board);
   print_board(hints_arr);
 
