@@ -3,6 +3,8 @@
 
 void ft_putchar(char c);
 void ft_putnbr(int nbr);
+
 void split_string(char *hints, char hints_arr[4][4]);
+void print_board(char board[4][4]);
 
 #endif  // UTILS_H

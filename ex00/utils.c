@@ -32,3 +32,20 @@ void split_string(char *hints, char hints_arr[4][4]) {
     }
   }
 }
+
+void print_board(char board[4][4]) {
+  int i = 0;
+  int j = 0;
+  //(void)board;
+  while (i < 4) {
+    j = 0;
+    while (j < 4) {
+      ft_putchar(board[i][j]);
+      ft_putchar(' ');
+      j++;
+    }
+
+    ft_putchar('\n');
+    i++;
+  }
+}
