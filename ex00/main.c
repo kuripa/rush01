@@ -45,17 +45,13 @@ int main(int argc, char *argv[]) {
     i++;
   }
 
-
   split_string(hints, hints_arr);
-
-
-  solve(board, 0, 0);
-
+  
+  solve(board, hints_arr, 0, 0);
+  print_board(board);
 
   //printf("%d", count_visible(line));
 
-  print_board(board);
-  print_board(hints_arr);
 
   return 0;
 }
