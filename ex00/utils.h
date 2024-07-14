@@ -17,12 +17,9 @@
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
-void    ft_remove_spaces(char *str);
-
-int ft_is_digit(char ch);
+void	ft_remove_spaces(char *str);
 
 void	parse_string(char *hints, char hints_arr[N][N]);
-int     validate_string(const char *str); 
-
+int		validate_string(const char *str);
 
 #endif // UTILS_H

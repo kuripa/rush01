@@ -29,25 +29,20 @@ void	ft_putstr(char *str)
 	}
 }
 
-int	ft_is_digit(char ch)
+void	ft_remove_spaces(char *str)
 {
-	return (ch >= '0' && ch <= '9');
-}
+	char	*dst;
 
-int	ft_is_space(unsigned char ch)
-{
-	return (ch == ' ');
-}
-void ft_remove_spaces(char *str) {
-    char *dst = str;
-
-    while (*str) {
-        if (*str != ' ') {  // Check if current character is not a space
-            *dst++ = *str;
-        }
-        str++;
-    }
-    *dst = '\0';
+	dst = str;
+	while (*str)
+	{
+		if (*str != ' ')
+		{
+			*dst++ = *str;
+		}
+		str++;
+	}
+	*dst = '\0';
 }
 
 int	validate_string(const char *str)
@@ -68,9 +63,11 @@ int	validate_string(const char *str)
 
 void	parse_string(char *hints, char hints_arr[N][N])
 {
-	int	i = 0, j;
+	int	i;
+	int	j;
 
-	i = 0, j = 0;
+	i = 0;
+	j = 0;
 	ft_remove_spaces(hints);
 	if (validate_string(hints))
 	{
