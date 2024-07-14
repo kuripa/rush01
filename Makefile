@@ -16,7 +16,7 @@ TARGET = rush01
 SRCDIR = ex00
 
 # Source files
-SRCS = $(SRCDIR)/main.c $(SRCDIR)/utils.c $(SRCDIR)/solver.c $(SRCDIR)/board.c
+SRCS = $(SRCDIR)/main.c $(SRCDIR)/utils.c $(SRCDIR)/solver.c $(SRCDIR)/board.c $(SRCDIR)/visible.c
 
 # Object directory
 OBJDIR = obj

@@ -6,7 +6,7 @@
 /*   By: nfuhrman <nfuhrman@student.42wolfsburg.de  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/14 19:14:17 by nfuhrman          #+#    #+#             */
-/*   Updated: 2024/07/14 19:14:18 by nfuhrman         ###   ########.fr       */
+/*   Updated: 2024/07/14 21:03:30 by nfuhrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,74 +51,74 @@ int	solve(char board[N][N], char hints[N][N], int row, int col)
 	return (0);
 }
 
-int	count_visible(char board[N][N], t_direction dir, int idx)
-{
-	int	max_height;
-	int	visible_count;
-	int	row;
-	int	col;
-	int	height;
-
-	max_height = 0;
-	visible_count = 0;
-	if (dir == TOP)
-	{
-		row = 0;
-		while (row < N)
-		{
-			height = board[row][idx] - '0';
-			if (height > max_height)
-			{
-				max_height = height;
-				visible_count++;
-			}
-			row++;
-		}
-	}
-	else if (dir == BOTTOM)
-	{
-		row = 3;
-		while (row >= 0)
-		{
-			height = board[row][idx] - '0';
-			if (height > max_height)
-			{
-				max_height = height;
-				visible_count++;
-			}
-			row--;
-		}
-	}
-	else if (dir == LEFT)
-	{
-		col = 0;
-		while (col < N)
-		{
-			height = board[idx][col] - '0';
-			if (height > max_height)
-			{
-				max_height = height;
-				visible_count++;
-			}
-			col++;
-		}
-	}
-	else if (dir == RIGHT)
-	{
-		col = 3;
-		while (col >= 0)
-		{
-			height = board[idx][col] - '0';
-			if (height > max_height)
-			{
-				max_height = height;
-				visible_count++;
-			}
-			col--;
-		}
-	}
-	return (visible_count);
-}
+/*int	count_visible(char board[N][N], t_direction dir, int idx)*/
+/*{*/
+/*	int	max_height;*/
+/*	int	visible_count;*/
+/*	int	row;*/
+/*	int	col;*/
+/*	int	height;*/
+/**/
+/*	max_height = 0;*/
+/*	visible_count = 0;*/
+/*	if (dir == TOP)*/
+/*	{*/
+/*		row = 0;*/
+/*		while (row < N)*/
+/*		{*/
+/*			height = board[row][idx] - '0';*/
+/*			if (height > max_height)*/
+/*			{*/
+/*				max_height = height;*/
+/*				visible_count++;*/
+/*			}*/
+/*			row++;*/
+/*		}*/
+/*	}*/
+/*	else if (dir == BOTTOM)*/
+/*	{*/
+/*		row = 3;*/
+/*		while (row >= 0)*/
+/*		{*/
+/*			height = board[row][idx] - '0';*/
+/*			if (height > max_height)*/
+/*			{*/
+/*				max_height = height;*/
+/*				visible_count++;*/
+/*			}*/
+/*			row--;*/
+/*		}*/
+/*	}*/
+/*	else if (dir == LEFT)*/
+/*	{*/
+/*		col = 0;*/
+/*		while (col < N)*/
+/*		{*/
+/*			height = board[idx][col] - '0';*/
+/*			if (height > max_height)*/
+/*			{*/
+/*				max_height = height;*/
+/*				visible_count++;*/
+/*			}*/
+/*			col++;*/
+/*		}*/
+/*	}*/
+/*	else if (dir == RIGHT)*/
+/*	{*/
+/*		col = 3;*/
+/*		while (col >= 0)*/
+/*		{*/
+/*			height = board[idx][col] - '0';*/
+/*			if (height > max_height)*/
+/*			{*/
+/*				max_height = height;*/
+/*				visible_count++;*/
+/*			}*/
+/*			col--;*/
+/*		}*/
+/*	}*/
+/*	return (visible_count);*/
+/*}*/
 
 int	is_unique(char board[N][N], int idx)
 {
