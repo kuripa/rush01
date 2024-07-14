@@ -9,49 +9,29 @@
 /*   Updated: 2024/07/13 12:34:10 by nfuhrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-// #include "dbg.h"
-#include <stdio.h>
-#include "utils.h"
+#include "base.h"
+#include "board.h"
 #include "solver.h"
+#include "utils.h"
+/*char *hints = "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2";*/
+/*char *hints = "2 1 3 2 1 2 2 3 2 3 3 1 2 1 2 4";*/
+/*char *hints = "4 1 3 2 2 3 1 2 2 4 1 2 3 1 3 2";*/
+int	main(int argc, char *argv[])
+{
+	char	hints_arr[N][N];
+	char	board[N][N];
+	char	*hints;
 
-/*TODO: remove this and create a dynamic array*/
-
-#define ROW 4
-#define COLUMN 4
-
-int grid[4][4];
-
-int main(int argc, char *argv[]) {
-  // TODO: check if the input is valid
-  (void)argc;
-  (void)argv;
-
-
-  char *hints = "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2";
-  char hints_arr[ROW][COLUMN];
-  char board[ROW][COLUMN];
-
-  int i = 0;
-  int j = 0;
-
-  // This should be in the main.c
-  while (i < ROW) {
-    j = 0;
-    while (j < COLUMN) {
-      board[i][j] = '0';
-      j++;
-    }
-
-    i++;
-  }
-
-  split_string(hints, hints_arr);
-  
-  solve(board, hints_arr, 0, 0);
-  print_board(board);
-
-  //printf("%d", count_visible(line));
-
-
-  return 0;
+	(void)argc;
+	(void)argv;
+	hints = "3 3 2 1 2 1 3 3 4 3 1 2 1 2 2 2";
+	parse_string(hints, hints_arr);
+	init_board(board);
+	if (!solve(board, hints_arr, 0, 0))
+	{
+		ft_putstr("Error");
+		return (0);
+	}
+	print_board(board);
+	return (0);
 }

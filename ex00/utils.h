@@ -1,10 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nfuhrman <nfuhrman@student.42wolfsburg.de  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/14 19:13:34 by nfuhrman          #+#    #+#             */
+/*   Updated: 2024/07/14 19:13:35 by nfuhrman         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef UTILS_H
-#define UTILS_H 
+# define UTILS_H
 
-void ft_putchar(char c);
-void ft_putnbr(int nbr);
+# include "base.h"
 
-void split_string(char *hints, char hints_arr[4][4]);
-void print_board(char board[4][4]);
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
 
-#endif  // UTILS_H
+void	parse_string(char *hints, char hints_arr[N][N]);
+
+#endif // UTILS_H

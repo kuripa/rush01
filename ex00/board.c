@@ -1,56 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   board.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfuhrman <nfuhrman@student.42wolfsburg.de  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/14 19:13:29 by nfuhrman          #+#    #+#             */
-/*   Updated: 2024/07/14 19:13:30 by nfuhrman         ###   ########.fr       */
+/*   Created: 2024/07/14 19:12:55 by nfuhrman          #+#    #+#             */
+/*   Updated: 2024/07/14 19:13:01 by nfuhrman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "board.h"
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	if (str)
-	{
-		while (*str)
-		{
-			ft_putchar(*str);
-			str++;
-		}
-	}
-}
-
-void	parse_string(char *hints, char hints_arr[N][N])
+void	init_board(char board[N][N])
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	if (hints)
+	while (i < N)
 	{
-		while (i < N && *hints)
+		j = 0;
+		while (j < N)
 		{
-			j = 0;
-			while (j < N)
-			{
-				if (*hints >= '0' && *hints <= '9')
-				{
-					hints_arr[i][j] = *hints;
-					j++;
-				}
-				hints++;
-			}
-			i++;
+			board[i][j] = '0';
+			j++;
 		}
+		i++;
+	}
+}
+
+void	print_board(char board[N][N])
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < N)
+	{
+		j = 0;
+		while (j < N)
+		{
+			ft_putchar(board[i][j]);
+			ft_putchar(' ');
+			j++;
+		}
+		ft_putchar('\n');
+		i++;
 	}
 }
